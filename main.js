@@ -16,16 +16,16 @@ let rubrica = {
         this.contacts.push(nuovo_contatto);
     },
 
-    rimuovi_contatto : function(nameindex){
-        let index = this.contacts.indexOf(nameindex);
-        if(index >= 0){
-            this.contacts.splice(nameindex, 1);
-
-        }else{
+    rimuovi_contatto: function (nameindex){
+        let names = this.contacts.map(contatto => contatto.nome);
+        console.log(names);
+        let index = names.indexOf(nameindex);
+        console.log(index);
+        if (index >= 0) {
+            this.contacts.splice(index, 1);
+         } else {
             console.log(`${nameindex} non presente in rubrica`);
-
         }
-
     },
 
     modifica_contatto: function (nome, nuovoNome, nuovoTelefono) {
